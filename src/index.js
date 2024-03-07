@@ -16,6 +16,7 @@ const signupRoutePost = require("./routes/signup.routes.js");
 //MIDDLEWARES
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
+app.use(express.static(path.join(__dirname,"../public/css")));
 
 
 //DATABASE CONNECTIONS

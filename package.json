@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "\"This is the online bus reservation Webapp\"",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
@@ -12,6 +11,7 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
+    "ejs-mate": "^4.0.0",
     "express": "^4.18.3",
     "mongoose": "^8.2.0"
   }

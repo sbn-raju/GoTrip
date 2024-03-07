@@ -1,32 +1,41 @@
-import express from "express";
-import dotenv from 'dotenv';
-import homeRouter from "./routes/home.routes.js"
-import aboutRouter from "./routes/about.routes.js"
-import loginRouter from "./routes/login.routes.js"
-import connectDB from "./db/index.js";
-dotenv.config({
-    path:"./env",
-});
-
+//NPM PACKAGES
+const express = require("express");
 const app = express();
+const path = require("path");
+const mongoose = require("mongoose");
+const connectDB = require("./db/index.js");
 
-//Mongo Db Connection
+//GETTING ROUTES
+const indexRoute = require("./routes/index.route.js");
+const homeRoute = require("./routes/home.routes.js");
+const loginRoute = require("./routes/login.routes.js");
+const loginRoutePost = require("./routes/login.routes.js"); 
+const signupRoute = require("./routes/signup.routes.js");
+const signupRoutePost = require("./routes/signup.routes.js");
+
+//MIDDLEWARES
+app.set("view engine","ejs");
+app.set("views",path.join(__dirname,"views"));
+
+
+//DATABASE CONNECTIONS
 connectDB();
 
 
-//App listen 
-app.listen(process.env.PORT,()=>{
-    console.log("App is listening at the port");
+// ENIVORNMENT VARIABLES
+let port = process.env.PORT || 3000;
+
+
+// APP ROUTES
+app.listen(port,()=>{
+    console.log(`App is listening at port ${port}`);
 });
-
-//App Routes
-app.get("/",(req,res)=>{
-    res.send("App is working");
-});
-app.get("/home",homeRouter);
-app.get("/about",aboutRouter)
-app.get("/login",loginRouter);
-
-
-
-
+//Common Routes
+app.use('/',indexRoute);
+app.use('/home',homeRoute);
+//Login Routes
+app.use('/login',loginRoute);
+app.use('/login/post',loginRoutePost);
+//Signup Routes
+app.use('/signup',signupRoute);
+app.use('/signup/post',signupRoutePost);

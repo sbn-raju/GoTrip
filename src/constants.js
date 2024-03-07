@@ -1,1 +1,2 @@
-export const DB_NAME = "Gotrip";
+const DB_NAME = "Gotrip";
+module.exports = DB_NAME 

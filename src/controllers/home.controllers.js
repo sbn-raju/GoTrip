@@ -1,5 +1,5 @@
-const homeRoute = (req,res)=>{
-    res.send("This is home Route");
+const homeController = (req,res)=>{
+    res.render("home.ejs");
 }
 
-export {homeRoute}
+module.exports = homeController;

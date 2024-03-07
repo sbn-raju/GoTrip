@@ -1,5 +1,9 @@
-const loginRoute = (req,res)=>{
-    res.send("This is a Login Page");
+const loginController = (req,res)=>{
+    res.render("login.ejs");
+}
+const loginPostController = (req,res)=>{
+    res.send("This is a post Request");
 }
 
-export{ loginRoute }
+
+module.exports = [loginController, loginPostController];

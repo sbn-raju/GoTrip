@@ -4,6 +4,7 @@ const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
 const connectDB = require("./db/index.js");
+const engine = require("ejs-mate");
 
 //GETTING ROUTES
 const indexRoute = require("./routes/index.route.js");
@@ -15,11 +16,11 @@ const signupRoutePost = require("./routes/signup.routes.js");
 
 //MIDDLEWARES
 app.set("view engine","ejs");
-app.set("views",path.join(__dirname,"views"));
+app.set("views",path.join(__dirname,"views/Pages"));
 app.use(express.static(path.join(__dirname,"../public/css")));
 app.use(express.static(path.join(__dirname,"../public/js")));
 app.use(express.static(path.join(__dirname,"../public/images")));
-
+app.engine('ejs',engine);
 
 //DATABASE CONNECTIONS
 connectDB();
@@ -37,8 +38,8 @@ app.listen(port,()=>{
 app.use('/',indexRoute);
 app.use('/home',homeRoute);
 //Login Routes
-app.use('/login',loginRoute);
-app.use('/login/post',loginRoutePost);
+app.get('/login',loginRoute);
+app.post('/login/post',loginRoutePost);
 //Signup Routes
-app.use('/signup',signupRoute);
-app.use('/signup/post',signupRoutePost);
+app.get('/signup',signupRoute);
+app.post('/signup/post',signupRoutePost);

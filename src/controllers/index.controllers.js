@@ -1,5 +1,5 @@
 const indexController = (req,res)=>{
-    res.render("index.ejs");
+    res.render("HomePage.ejs");
 }
 
 module.exports = indexController;

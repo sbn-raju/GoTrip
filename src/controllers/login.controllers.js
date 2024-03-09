@@ -1,5 +1,5 @@
 const loginController = (req,res)=>{
-    res.render("login.ejs");
+    res.render("LoginPage.ejs");
 }
 const loginPostController = (req,res)=>{
     res.send("This is a post Request");

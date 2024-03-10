@@ -36,7 +36,7 @@ app.listen(port,()=>{
 });
 //Common Routes
 app.use('/',indexRoute);
-app.use('/home',homeRoute);
+app.get('/home',homeRoute);
 //Login Routes
 app.get('/login',loginRoute);
 app.post('/login/post',loginRoutePost);

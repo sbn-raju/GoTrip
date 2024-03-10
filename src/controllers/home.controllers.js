@@ -1,5 +1,5 @@
 const homeController = (req,res)=>{
-    res.render("home.ejs");
+    res.render("HomePage.ejs");
 }
 
 module.exports = homeController;

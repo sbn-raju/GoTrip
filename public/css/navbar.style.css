@@ -1,5 +1,6 @@
 .navbar{
     height: 5rem;
+    border-bottom: 1px solid gray;
 }
 .navbar-brand{
     height: 100%;
@@ -12,4 +13,10 @@
 .logo img{
     width: 70%;
     height: 100%;
+}
+li a{
+    color: black !important;
+}
+.btn-signin{
+    margin-right: 5rem;
 }

@@ -1,0 +1,31 @@
+.container{
+    padding-top: 4rem;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.left-container{
+    height: 100%;
+    width: 50%;
+}
+.right-container{
+    height: 100%;
+    width: 50%;
+    background-image: url('HeroImage.png');
+    background-size:cover;
+}
+.location-search-box{
+    width: 60%;
+    
+}
+.conatiner-column{
+    padding-top: 1rem;
+    flex-direction: column;
+}
+.top-container{
+    width: 70%;
+    height: 20%;
+    background-image: url('webreferal.png');
+}
